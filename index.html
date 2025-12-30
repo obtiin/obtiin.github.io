@@ -13,303 +13,543 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FFE66D;
+        }
+
+        .nav-links a.active {
+            color: #FFE66D;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 4rem;
+            position: relative;
+        }
+
+        .hero-label {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            color: #FFE66D;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 .highlight {
+            color: #FFE66D;
+        }
+
+        .hero .subtitle {
+            font-size: 2rem;
+            color: #999;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: #FFE66D;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 230, 109, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            min-height: 100vh;
+            padding: 6rem 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            border-color: #FFE66D;
+        }
+
+        .skill-card h3 {
+            color: #FFE66D;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 0.5rem 0;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .skill-card li:before {
+            content: "→ ";
+            color: #FFE66D;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #FFE66D;
+            transform: translateX(10px);
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .project-tech {
+            color: #FFE66D;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            color: #ccc;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            font-size: 1rem;
         }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 4rem;
+            padding-left: 2rem;
+            border-left: 2px solid #FFE66D;
         }
 
-        header h1 {
-            font-size: 2.5rem;
+        .experience-item h3 {
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
 
-        header p {
+        .experience-role {
+            color: #FFE66D;
             font-size: 1.2rem;
-            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .container {
-            max-width: 900px;
+        .experience-date {
+            color: #999;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .experience-item ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .experience-item li {
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 700px;
+            text-align: center;
             margin: 0 auto;
-            padding: 2rem;
         }
 
-        .section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #667eea;
+        .contact-content p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+            line-height: 1.6;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
 
         .contact-links a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.2);
-            border-radius: 5px;
-            transition: background 0.3s;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-links a:hover {
-            background: rgba(255,255,255,0.3);
+            background: #FFE66D;
+            color: #000;
+            transform: translateY(-2px);
         }
 
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-
-        .skill-category h3 {
-            color: #667eea;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            padding: 0.25rem 0;
-            color: #555;
-        }
-
-        .skill-category li:before {
-            content: "▹ ";
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .project {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .project:last-child {
-            border-bottom: none;
-        }
-
-        .project h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .project .tech-stack {
-            color: #667eea;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-item {
-            margin-bottom: 2rem;
-        }
-
-        .experience-item h3 {
-            color: #333;
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-item .role {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-item .date {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-item ul {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .experience-item li {
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #888;
+            padding: 3rem;
+            color: #666;
             font-size: 0.9rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 0 2rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .section-title {
                 font-size: 2rem;
             }
 
-            .container {
-                padding: 1rem;
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            .section {
-                padding: 1.5rem;
+            .btn {
+                text-align: center;
             }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Data Scientist | Machine Learning Engineer</p>
-        <div class="contact-links">
-            <a href="mailto:your.email@example.com">Email</a>
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-label">HELLO!</div>
+        <h1>I'm <span class="highlight">Your Name</span></h1>
+        <div class="subtitle">A Data Scientist</div>
+        <div class="cta-buttons">
+            <a href="#about" class="btn btn-primary">KNOW ME</a>
+            <a href="#projects" class="btn btn-secondary">MY WORKS</a>
         </div>
-    </header>
+    </section>
 
-    <div class="container">
-        <section class="section">
-            <h2>About Me</h2>
-            <p>Passionate data scientist with X years of experience in machine learning, statistical analysis, and data visualization. Specialized in building end-to-end ML pipelines and deriving actionable insights from complex datasets. Committed to leveraging data-driven approaches to solve real-world problems.</p>
-        </section>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I'm a passionate data scientist with a love for uncovering insights from complex datasets and building intelligent systems that make a real-world impact.</p>
+            <p>With expertise in machine learning, statistical modeling, and data visualization, I transform raw data into actionable strategies. My work spans predictive analytics, deep learning, and building scalable data pipelines.</p>
+            <p>When I'm not crunching numbers or training models, you'll find me exploring the latest developments in AI, contributing to open-source projects, or sharing knowledge with the data science community.</p>
+        </div>
 
-        <section class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>R</li>
-                        <li>SQL</li>
-                        <li>Java</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>ML/DL Frameworks</h3>
-                    <ul>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>Keras</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Tools</h3>
-                    <ul>
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>Apache Spark</li>
-                        <li>Jupyter</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Visualization</h3>
-                    <ul>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                        <li>Plotly</li>
-                        <li>Tableau</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Cloud & Tools</h3>
-                    <ul>
-                        <li>AWS</li>
-                        <li>Docker</li>
-                        <li>Git</li>
-                        <li>MLflow</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Company Name</h3>
-                <div class="role">Senior Data Scientist</div>
-                <div class="date">January 2022 - Present</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Programming</h3>
                 <ul>
-                    <li>Developed and deployed machine learning models that improved prediction accuracy by 25%</li>
-                    <li>Led a team of 3 data scientists in building recommendation systems serving 1M+ users</li>
-                    <li>Automated data pipelines using Apache Airflow, reducing processing time by 40%</li>
+                    <li>Python</li>
+                    <li>R</li>
+                    <li>SQL</li>
+                    <li>Java</li>
                 </ul>
             </div>
-            <div class="experience-item">
-                <h3>Previous Company</h3>
-                <div class="role">Data Scientist</div>
-                <div class="date">June 2020 - December 2021</div>
+            <div class="skill-card">
+                <h3>ML/DL Frameworks</h3>
                 <ul>
-                    <li>Built predictive models for customer churn, achieving 85% accuracy</li>
-                    <li>Performed A/B testing and statistical analysis to drive product decisions</li>
-                    <li>Created interactive dashboards in Tableau for executive reporting</li>
+                    <li>TensorFlow</li>
+                    <li>PyTorch</li>
+                    <li>Scikit-learn</li>
+                    <li>Keras</li>
                 </ul>
             </div>
-        </section>
+            <div class="skill-card">
+                <h3>Data Tools</h3>
+                <ul>
+                    <li>Pandas</li>
+                    <li>NumPy</li>
+                    <li>Apache Spark</li>
+                    <li>Jupyter</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Visualization</h3>
+                <ul>
+                    <li>Matplotlib</li>
+                    <li>Seaborn</li>
+                    <li>Plotly</li>
+                    <li>Tableau</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Featured Projects</h2>
-            <div class="project">
-                <h3>Project Name 1</h3>
-                <div class="tech-stack">Python • TensorFlow • Docker • AWS</div>
-                <p>Description of your impressive data science project. Explain the problem, your approach, and the impact. Include metrics and results where possible.</p>
-            </div>
-            <div class="project">
-                <h3>Project Name 2</h3>
-                <div class="tech-stack">Python • Scikit-learn • Pandas • Flask</div>
-                <p>Another significant project showcasing your skills in data analysis, modeling, or visualization. Highlight what makes this project unique.</p>
-            </div>
-            <div class="project">
-                <h3>Project Name 3</h3>
-                <div class="tech-stack">R • Shiny • ggplot2</div>
-                <p>A third project demonstrating breadth in your technical abilities. Could be a Kaggle competition, open-source contribution, or personal project.</p>
-            </div>
-        </section>
+    <section id="resume">
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="experience-item">
+            <h3>Company Name</h3>
+            <div class="experience-role">Senior Data Scientist</div>
+            <div class="experience-date">January 2022 - Present</div>
+            <ul>
+                <li>Developed and deployed machine learning models that improved prediction accuracy by 25%</li>
+                <li>Led a team of 3 data scientists in building recommendation systems serving 1M+ users</li>
+                <li>Automated data pipelines using Apache Airflow, reducing processing time by 40%</li>
+                <li>Implemented A/B testing framework for data-driven product decisions</li>
+            </ul>
+        </div>
 
-        <section class="section">
-            <h2>Education</h2>
-            <div class="experience-item">
-                <h3>University Name</h3>
-                <div class="role">Master of Science in Data Science</div>
-                <div class="date">2018 - 2020</div>
-                <p>Relevant coursework: Machine Learning, Statistical Inference, Deep Learning, Big Data Analytics</p>
+        <div class="experience-item">
+            <h3>Previous Company</h3>
+            <div class="experience-role">Data Scientist</div>
+            <div class="experience-date">June 2020 - December 2021</div>
+            <ul>
+                <li>Built predictive models for customer churn, achieving 85% accuracy</li>
+                <li>Performed statistical analysis and A/B testing to optimize conversion rates</li>
+                <li>Created interactive dashboards in Tableau for executive reporting</li>
+                <li>Collaborated with engineering teams to deploy ML models to production</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>University Name</h3>
+            <div class="experience-role">Master of Science in Data Science</div>
+            <div class="experience-date">2018 - 2020</div>
+            <p style="color: #ccc; margin-top: 1rem;">Relevant coursework: Machine Learning, Statistical Inference, Deep Learning, Big Data Analytics, Natural Language Processing</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Predictive Analytics Platform</h3>
+                <div class="project-tech">Python • TensorFlow • Docker • AWS • PostgreSQL</div>
+                <p>Built an end-to-end machine learning platform that predicts customer behavior with 92% accuracy. Implemented automated model retraining pipelines and deployed scalable microservices handling 10M+ predictions daily.</p>
             </div>
-        </section>
-    </div>
+
+            <div class="project-card">
+                <h3>Real-Time Sentiment Analysis</h3>
+                <div class="project-tech">Python • PyTorch • Apache Kafka • ElasticSearch</div>
+                <p>Developed a real-time sentiment analysis system processing 50K tweets per minute. Utilized transformer models and stream processing to provide actionable insights for brand monitoring and crisis detection.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Computer Vision Detection System</h3>
+                <div class="project-tech">Python • OpenCV • YOLO • Flask • React</div>
+                <p>Created an object detection system for quality control in manufacturing. Achieved 96% precision using custom-trained YOLO models and reduced inspection time by 60% while improving defect detection rates.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Interactive Data Dashboard</h3>
+                <div class="project-tech">R • Shiny • ggplot2 • Plotly</div>
+                <p>Designed and launched an interactive dashboard for business intelligence, enabling stakeholders to explore key metrics through custom visualizations. Reduced reporting time from days to minutes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-content">
+            <p>I'm always interested in hearing about new projects and opportunities. Whether you want to collaborate, discuss data science, or just say hi, feel free to reach out!</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>© 2024 Your Name. Built with ❤️ and deployed with GitHub Actions.</p>
+        <p>© 2024 Your Name. Built with passion and deployed with GitHub Actions.</p>
     </footer>
+
+    <script>
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
