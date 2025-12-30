@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obtin Zandian - Data Scientist</title>
-    <style>
+        <style>
         * {
             margin: 0;
             padding: 0;
@@ -67,18 +67,23 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start;
             padding: 0 4rem;
             position: relative;
         }
+
         .hero-content {
             display: flex;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
             width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .hero-left {
             flex: 1;
+            min-width: 0;
         }
 
         .hero-right {
@@ -86,32 +91,34 @@
             flex-direction: column;
             align-items: center;
             gap: 2rem;
+            flex-shrink: 0;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
+            width: 380px;
+            height: 380px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #FFE66D;
-            box-shadow: 0 10px 40px rgba(255, 230, 109, 0.3);
+            border: 5px solid #FFE66D;
+            box-shadow: 0 20px 60px rgba(255, 230, 109, 0.4);
         }
 
         .hero-contact-links {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 1rem;
             align-items: center;
         }
 
         .hero-contact-links a {
             color: #ccc;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-weight: 500;
         }
 
         .hero-contact-links a:hover {
@@ -122,20 +129,22 @@
         .hero-contact-links a:before {
             content: "→";
             color: #FFE66D;
+            font-size: 1.2rem;
         }
+
         .hero-label {
             font-size: 1rem;
             letter-spacing: 3px;
             color: #FFE66D;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
         .hero h1 {
-            font-size: 6rem;
+            font-size: 5.5rem;
             font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 2rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
             letter-spacing: -2px;
         }
 
@@ -146,17 +155,17 @@
         .hero .subtitle {
             font-size: 2rem;
             color: #999;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             font-weight: 300;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .btn {
-            padding: 1.2rem 2.5rem;
+            padding: 1.1rem 2.3rem;
             font-size: 1rem;
             font-weight: 600;
             border: none;
@@ -384,6 +393,36 @@
         }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .profile-photo {
+                width: 320px;
+                height: 320px;
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                gap: 4rem;
+            }
+
+            .profile-photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.8rem;
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1.5rem 2rem;
@@ -391,10 +430,21 @@
 
             .nav-links {
                 gap: 1.5rem;
+                font-size: 0.9rem;
             }
 
             .hero {
                 padding: 0 2rem;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                gap: 3rem;
+            }
+
+            .profile-photo {
+                width: 240px;
+                height: 240px;
             }
 
             .hero h1 {
