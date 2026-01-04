@@ -74,7 +74,7 @@
 
         .hero-content {
             display: flex;
-            gap: 6rem;
+            gap: 5rem;
             align-items: center;
             width: 100%;
             max-width: 1400px;
@@ -95,19 +95,19 @@
         }
 
         .profile-photo {
-            width: 380px;
-            height: 380px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #FFE66D;
+            border: 6px solid #FFE66D;
         }
 
         .hero-contact-links {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.3rem;
             align-items: center;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
         }
 
         .hero-contact-links a {
@@ -141,7 +141,7 @@
         }
 
         .hero h1 {
-            font-size: 5.5rem;
+            font-size: 5rem;
             font-weight: 700;
             line-height: 1;
             margin-bottom: 1.5rem;
@@ -395,23 +395,27 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .profile-photo {
-                width: 320px;
-                height: 320px;
+                width: 400px;
+                height: 400px;
             }
 
             .hero h1 {
                 font-size: 4.5rem;
             }
+
+            .hero-content {
+                gap: 4rem;
+            }
         }
 
         @media (max-width: 968px) {
             .hero-content {
-                gap: 4rem;
+                gap: 3rem;
             }
 
             .profile-photo {
-                width: 280px;
-                height: 280px;
+                width: 350px;
+                height: 350px;
             }
 
             .hero h1 {
@@ -443,8 +447,8 @@
             }
 
             .profile-photo {
-                width: 240px;
-                height: 240px;
+                width: 280px;
+                height: 280px;
             }
 
             .hero h1 {
@@ -517,7 +521,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <p>Hi, I'm Obtin, a Data Scientist working in Marketing Analytics at Apple. Everyday, I apply machine learning, natural language processing, and forecasting to inform marketing strategy across multiple lines of business at the company. </p>
-            <p>I hold a Master’s degree in Data Science from the University of San Francisco, and a Bachelor’s degree in Neuroscience from Boston University.</p>
+            <p>I hold a Master's degree in Data Science from the University of San Francisco, and a Bachelor's degree in Neuroscience from Boston University.</p>
             <p>In my free time, I'm an avid musician, backpacker, and basketball player.</p>
         </div>
 
@@ -558,6 +562,7 @@
                     <li>Databricks</li>
                     <li>Mongo DB</li>
                 </ul>
+            </div>
         </div>
     </section>
 
@@ -570,7 +575,7 @@
             <div class="experience-date">Oct 2024 - Present</div>
             <ul>
                 <li>Design and deployed cross-channel brand awareness models to measure top and mid-funnel marketing performance for four Apple services.</li>
-                <li>Present monthly, full-funnel performance reports to senior stakeholders of four transactional & subscription-based Apple Services, translating technical campaign results into actionable insights on brand health and bottom funnel KPI’s.</li>
+                <li>Present monthly, full-funnel performance reports to senior stakeholders of four transactional & subscription-based Apple Services, translating technical campaign results into actionable insights on brand health and bottom funnel KPI's.</li>
                 <li>Modeled ROAS and optimized SEM spend for transaction-based Apple service, generating to $150k in annual savings for the business.</li>
                 <li>Analyzed over $2,000,000 of digital ad placements to evaluate ROI across organic and paid media performance.</li>
                 <li>Improve baseline model performance by 14% in predicting digital impressions, engagements, and positive sentiment for four Apple services.</li>
@@ -588,13 +593,11 @@
                 <li>Built Reinforcement Learning (RL) Ensemble to automate and optimize stock portfolio trading using price and technical indicator data.</li>
                 <li>Designed end-to-end pipeline for RL ensemble that takes in a portfolio of stocks, and automatically gathers all necessary data for trading.</li>
                 <li>Deployed RL pipeline with a streamlit web-app, simplifying user interactions and enabling visualizations for non-technical stakeholders.</li>
-
             </ul>
         </div>
-        
     </section>
 
-        <section id="Education">
+    <section id="Education">
         <h2 class="section-title">Education</h2>
         
         <div class="experience-item">
@@ -612,7 +615,6 @@
             <ul>
             </ul>
         </div>
-        
     </section>
 
     <section id="projects">
